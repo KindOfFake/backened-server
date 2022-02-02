@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple web app where anyone can buy its fovourite things",
   "main": "index.js",
+  "engines": {
+    "node": "16.13.0"
+  },
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend-server && npm run build --prefix frontend-server",
