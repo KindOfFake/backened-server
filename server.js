@@ -16,9 +16,9 @@ app.use(userRouter)
 app.use(orderRouter)
 app.use(uploadRouter)
 // __dirname=path.resolve()     //const
-app.use('/client-side/public/images',express.static(path.join(__dirname,'/client-side/public/images')))
+app.use('/frontend-server/public/images',express.static(path.join(__dirname,'/frontend-server/public/images')))
 
-// console.log(path.join(__dirname,'client-side/public/images'));
+ console.log(path.join(__dirname,'frontend-server/public/images'));
 app.get('/Api/config/paypal',(req,res)=>{
   const PAYPAL_CLIENT_ID='AY6FXaUQyMsFuuB1bY--uLaoqEIwpxI3iNyP2OVsJKatf60BdX7ksinSUAV4THGvz8lgFNfZbw8BVHZi'
   res.send(PAYPAL_CLIENT_ID)
@@ -48,10 +48,10 @@ app.post('/Api/config/razorpay',async(req,res)=>{
 
 
 if (process.env.NODE_ENV == "production") {
-  app.use(express.static(path.join(__dirname, 'client-side/build')))
+  app.use(express.static(path.join(__dirname, 'frontend-server/build')))
 
   app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, 'client-side', 'build', 'index.html'))
+    res.sendFile(path.join(__dirname, 'frontend-server', 'build', 'index.html'))
   )
 } else {
   app.get('/', (req, res) => {

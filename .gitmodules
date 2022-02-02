@@ -1,0 +1,3 @@
+[submodule "frontend-server"]
+	path = frontend-server
+	url = https://github.com/KindOfFake/frontend-server.git
